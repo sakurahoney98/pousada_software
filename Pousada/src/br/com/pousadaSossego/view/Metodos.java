@@ -23,7 +23,7 @@ public class Metodos {
 
 		do {
 			prox = true;
-			System.out.print("\n\nDigite a matrÌcula: ");
+			System.out.print("\n\nDigite a matr√≠cula: ");
 			id = sc.nextLine();
 
 			for (Funcionario f : listaFuncionarios) {
@@ -33,16 +33,16 @@ public class Metodos {
 				}
 			}
 			if (prox) {
-				System.out.print("\nDigite o nome completo do funcion·rio: ");
+				System.out.print("\nDigite o nome completo do funcion√°rio: ");
 				nome = sc.nextLine();
 
 				listaFuncionarios.add(new Funcionario(nome, id));
-				System.out.println("\nFuncion·rio cadastrado com sucesso.\n\n");
+				System.out.println("\nFuncion√°rio cadastrado com sucesso.\n\n");
 			} else {
-				System.out.println("\nA matrÌcula informada j· est· em uso.\n\n");
+				System.out.println("\nA matr√≠cula informada j√° est√° em uso.\n\n");
 			}
 
-			System.out.print("Deseja cadastrar outro funcion·rio? [1] Sim [0] N„o: ");
+			System.out.print("Deseja cadastrar outro funcion√°rio? [1] Sim [0] N√£o: ");
 			tent2 = num.nextInt();
 		} while (tent2 == 1);
 
@@ -51,13 +51,13 @@ public class Metodos {
 	public void listaFuncionarios(ArrayList<Funcionario> listaFuncionarios) {
 
 		if (!listaFuncionarios.isEmpty()) {
-			System.out.println("\n\nFuncion·rios:");
+			System.out.println("\n\nFuncion√°rios:");
 			for (Funcionario f : listaFuncionarios) {
-				System.out.println("Nome: " + f.getNome() + "\nMatrÌcula: " + f.getId());
+				System.out.println("Nome: " + f.getNome() + "\nMatr√≠cula: " + f.getId());
 				System.out.println("-------------------------------------------------------------------------------");
 			}
 		} else
-			System.out.println("\n\nN„o h· funcion·rios cadastrados.\n\n");
+			System.out.println("\n\nN√£o h√° funcion√°rios cadastrados.\n\n");
 	}
 
 	public void filtroData(ArrayList<Quarto> listaQuartos) {
@@ -86,10 +86,10 @@ public class Metodos {
 		}
 
 		if (achou == 0) {
-			System.out.println("\nN„o h· quartos ocupados nessa data.\n\n");
+			System.out.println("\nN√£o h√° quartos ocupados nessa data.\n\n");
 
 		} else {
-			System.out.println("Os quartos ocupados nessa data s„o:\n" + aux);
+			System.out.println("Os quartos ocupados nessa data s√£o:\n" + aux);
 		}
 	}
 
@@ -98,11 +98,11 @@ public class Metodos {
 		int op = 0;
 
 		do {
-			System.out.println("\n\nEscolha uma opÁ„o: ");
+			System.out.println("\n\nEscolha uma op√ß√£o: ");
 			System.out.println("[1] Exibir todos os quartos e detalhes");
 			System.out.println("[2] Filtrar quarto e exibir detalhes");
 			System.out.println("[0] Sair");
-			System.out.print("\n\nOpÁ„o: ");
+			System.out.print("\n\nOp√ß√£o: ");
 			op = num.nextInt();
 			switch (op) {
 			case 0:
@@ -114,16 +114,16 @@ public class Metodos {
 					System.out.println("\nQuarto: " + q.getNumero());
 					System.out.println("\nDetalhes do quarto:\nValor: " + q.getValor() + "\nCapacidade: "
 							+ q.getCapacidade() + " pessoas\tTipo de quarto: " + q.getTipo());
-					System.out.println("\nCronograma de ocupaÁ„o: ");
+					System.out.println("\nCronograma de ocupa√ß√£o: ");
 					if (!q.getLista().isEmpty()) {
 						for (Hospedagem h : q.getLista()) {
 							System.out.println("Cliente: " + h.getHospede().getNome() + "\nDe: "
-									+ formatter.format(h.getEntrada()) + "\tAtÈ: " + formatter.format(h.getSaida()));
+									+ formatter.format(h.getEntrada()) + "\tAt√©: " + formatter.format(h.getSaida()));
 							System.out.println(
 									"-------------------------------------------------------------------------------");
 						}
 					} else {
-						System.out.println("N„o h· hospedagens agendadas para este quarto.");
+						System.out.println("N√£o h√° hospedagens agendadas para este quarto.");
 					}
 
 					System.out
@@ -131,7 +131,7 @@ public class Metodos {
 				}
 				break;
 			case 2:
-				System.out.print("\n\nDigite o n˙mero do quarto: ");
+				System.out.print("\n\nDigite o n√∫mero do quarto: ");
 				int quarto = num.nextInt();
 				if (quarto > 0 && quarto < 11) {
 					for (Quarto q : listaQuartos) {
@@ -139,27 +139,27 @@ public class Metodos {
 							System.out.println("\nQuarto: " + q.getNumero());
 							System.out.println("\nDetalhes do quarto:\nValor: " + q.getValor() + "\nCapacidade: "
 									+ q.getCapacidade() + " pessoas\tTipo de quarto: " + q.getTipo());
-							System.out.println("\nCronograma de ocupaÁ„o: ");
+							System.out.println("\nCronograma de ocupa√ß√£o: ");
 							if (!q.getLista().isEmpty()) {
 								for (Hospedagem h : q.getLista()) {
 									System.out.println("Cliente: " + h.getHospede().getNome() + "\nDe: "
-											+ formatter.format(h.getEntrada()) + "\tAtÈ: "
+											+ formatter.format(h.getEntrada()) + "\tAt√©: "
 											+ formatter.format(h.getSaida()));
 									System.out.println(
 											"-------------------------------------------------------------------------------");
 								}
 							} else {
-								System.out.println("N„o h· hospedagens agendadas para este quarto.");
+								System.out.println("N√£o h√° hospedagens agendadas para este quarto.");
 							}
 						}
 
 					}
 				} else {
-					System.out.println("O quarto informado n„o existe. Os quartos s„o numerados de 1 ‡ 10.\n\n");
+					System.out.println("O quarto informado n√£o existe. Os quartos s√£o numerados de 1 √† 10.\n\n");
 				}
 				break;
 			default:
-				System.out.println("\nOpÁ„o inv·lida!\n");
+				System.out.println("\nOp√ß√£o inv√°lida!\n");
 			}
 
 		} while (op != 0);
@@ -173,7 +173,7 @@ public class Metodos {
 				System.out.println("-------------------------------------------------------------------------------");
 			}
 		} else {
-			System.out.println("\n\nVocÍ n„o possui hospedes cadastrados.\n\n");
+			System.out.println("\n\nVoc√™ n√£o possui hospedes cadastrados.\n\n");
 		}
 	}
 
@@ -181,13 +181,13 @@ public class Metodos {
 		if (!listaHospedeagem.isEmpty()) {
 
 			for (Hospedagem h : listaHospedeagem) {
-				System.out.println("HÛspede: " + h.getHospede().getNome() + "\nQuarto: " + h.getQuarto()
+				System.out.println("H√≥spede: " + h.getHospede().getNome() + "\nQuarto: " + h.getQuarto().getNumero()
 						+ "\nValor total a pagar: " + h.getValorTotal() + "\nData de entrada: "
-						+ formatter.format(h.getEntrada()) + "\tData de saÌda: " + formatter.format(h.getSaida()));
+						+ formatter.format(h.getEntrada()) + "\tData de sa√≠da: " + formatter.format(h.getSaida()));
 				System.out.println("-------------------------------------------------------------------------------");
 			}
 		} else {
-			System.out.println("\n\nVocÍ n„o possui hospedagens cadastradas.\n\n");
+			System.out.println("\n\nVoc√™ n√£o possui hospedagens cadastradas.\n\n");
 		}
 	}
 
@@ -216,10 +216,10 @@ public class Metodos {
 				listaHospede.add(new Hospede(nomeCliente, cpfCliente, telefoneCliente));
 				System.out.println("\n\nHospede cadastrado com sucesso!\n\n");
 			} else {
-				System.out.println("\n\nCPF j· cadastrado.\n\n");
+				System.out.println("\n\nCPF j√° cadastrado.\n\n");
 			}
 
-			System.out.print("Deseja cadastrar outro hospede? [1] Sim [0] N„o: ");
+			System.out.print("Deseja cadastrar outro hospede? [1] Sim [0] N√£o: ");
 			tent2 = num.nextInt();
 
 		} while (tent2 == 1);
@@ -261,18 +261,18 @@ public class Metodos {
 
 				}
 				if (!aux.isEmpty()) {
-					System.out.println("\nO cliente informado j· tem hospedagem agendada. Na(s) seguinte(s) data(s):");
+					System.out.println("\nO cliente informado j√° tem hospedagem agendada. Na(s) seguinte(s) data(s):");
 					for (Hospedagem h : aux) {
 						System.out.println(
 								"Quarto: " + h.getQuarto() + "\nData de entrada: " + formatter.format(h.getEntrada())
-										+ "\tData de saÌda: " + formatter.format(h.getSaida()) + "\n");
+										+ "\tData de sa√≠da: " + formatter.format(h.getSaida()) + "\n");
 					}
-					System.out.print("\n\nDeseja realizar uma nova hospedagem? [1] Sim [0] N„o: ");
+					System.out.print("\n\nDeseja realizar uma nova hospedagem? [1] Sim [0] N√£o: ");
 					Scanner op = new Scanner(System.in);
 					getOp = op.nextInt();
 				}
 				if (getOp == 1) {
-					System.out.print("\nN˙mero do quarto deseja se hospedar: ");
+					System.out.print("\nN√∫mero do quarto deseja se hospedar: ");
 					int numeroQuartoDesejado = scannerNum.nextInt();
 
 					if (numeroQuartoDesejado > 0 && numeroQuartoDesejado < 11) {
@@ -318,7 +318,7 @@ public class Metodos {
 					
 
 					if (prox == true) {
-						System.out.print("\nInforme a quantidade de hospedes que o quarto ter·: ");
+						System.out.print("\nInforme a quantidade de hospedes que o quarto ter√°: ");
 						int quantHospedes = scannerNum.nextInt();
 
 						if (quantHospedes <= quartoCliente.getCapacidade()) {
@@ -331,26 +331,26 @@ public class Metodos {
 
 						} 
 						else 
-							System.out.println("\nO quarto n„o suporta essa quantidade de pessoas.\n\n");
+							System.out.println("\nO quarto n√£o suporta essa quantidade de pessoas.\n\n");
 						
 
 					} else 
-						System.out.println("\nQuarto estar· ocupado nesta data.\n\n");
+						System.out.println("\nQuarto estar√° ocupado nesta data.\n\n");
 					
 					}
 					} else 
-							System.out.println("\nO cliente j· estar· hospedado em outro quarto nesse perÌodo.\n\n");
+							System.out.println("\nO cliente j√° estar√° hospedado em outro quarto nesse per√≠odo.\n\n");
 						
 					}
 					 else 
-						System.out.println("\nQuarto informado n„o existe!\n\n");
+						System.out.println("\nQuarto informado n√£o existe!\n\n");
 					
 				}
 				
 				 else 
-				System.out.println("\nCPF n„o foi encontrado!\n\n");
+				System.out.println("\nCPF n√£o foi encontrado!\n\n");
 			
-			System.out.print("Deseja fazer outra hospedagem? [1] Sim [0] N„o: ");
+			System.out.print("Deseja fazer outra hospedagem? [1] Sim [0] N√£o: ");
 			tent2 = scannerNum.nextInt();
 		} while (tent2 == 1);
 		System.out.println("\n\n");
@@ -362,7 +362,7 @@ public class Metodos {
 		boolean prox = false;
 		String diaFormat = null, mesFormat = null, anoFormat = null;
 		do {
-			System.out.println("\n\nInformaÁıes sobre a data inicial:");
+			System.out.println("\n\nInforma√ß√µes sobre a data inicial:");
 			System.out.print("\nDia: ");
 			diaI = num.nextInt();
 			System.out.print("\nMes: ");
@@ -391,7 +391,7 @@ public class Metodos {
 			prox = dataValida(diaFormat + "/" + mesFormat + "/" + anoFormat);
 
 			if (!prox)
-				System.out.println("A data digitada n„o È v·lida!\n");
+				System.out.println("A data digitada n√£o √© v√°lida!\n");
 		} while (!prox);
 
 		return diaFormat + "/" + mesFormat + "/" + anoFormat;
@@ -405,10 +405,10 @@ public class Metodos {
 		String diaFormat = null, mesFormat = null, anoFormat = null;
 		do {
 			do {
-				System.out.println("\n\nInformaÁıes sobre a data final:");
+				System.out.println("\n\nInforma√ß√µes sobre a data final:");
 				System.out.print("\nDia: ");
 				diaF = num.nextInt();
-				System.out.print("\nMÍs: ");
+				System.out.print("\nM√™s: ");
 				mesF = num.nextInt();
 				System.out.print("\nAno: ");
 				anoF = num.nextInt();
@@ -428,7 +428,7 @@ public class Metodos {
 
 				prox = dataValida(diaFormat + "/" + mesFormat + "/" + anoFormat);
 				if (!prox)
-					System.out.println("A data digitada n„o È v·lida!\n");
+					System.out.println("A data digitada n√£o √© v√°lida!\n");
 			} while (!prox);
 
 			prox = false;
@@ -441,7 +441,7 @@ public class Metodos {
 			}
 
 			if (!prox) {
-				System.out.println("A data final n„o pode ser menor que a data de inÌcio.\n");
+				System.out.println("A data final n√£o pode ser menor que a data de in√≠cio.\n");
 			}
 
 		} while (!prox);
